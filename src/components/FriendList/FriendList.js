@@ -6,7 +6,14 @@ import styles from "./FriendList.module.css";
 const FriendList = ({ friendsData }) => {
   return (
     friendsData.length > 0 && (
-      <ul className={styles.friendList}>{friendsData.map(FriendListItem)}</ul>
+      <ul className={styles.friendList}>{friendsData.map((el)=>
+        <FriendListItem
+          avatar={el.avatar}
+          name={el.name}
+          isOnline={el.isOnline}
+          key={el.id}
+        />
+      )}</ul>
     )
   );
 };

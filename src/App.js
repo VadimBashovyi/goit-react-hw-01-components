@@ -12,7 +12,13 @@ import transactionData from "./data/transactions.json";
 function App() {
   return (
     <Section classNames="userCard">
-      <Profile user={userData} />
+      <Profile user={userData}
+      username={userData.username}
+      tag={userData.tag}
+      location={userData.location}
+      avatar={userData.avatar}
+      stats={userData.stats}
+      />
       <Statistics title="Upload stats" stats={statisticData} />
       <FriendList friendsData={friendListData} />
       <TransactionHistory transactionData={transactionData} />
