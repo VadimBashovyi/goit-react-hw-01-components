@@ -14,7 +14,15 @@ const TransactionHistory = ({ transactionData }) => {
         </tr>
       </thead>
 
-      <tbody>{transactionData.map(TransactionItem)}</tbody>
+      <tbody>{transactionData.map((el)=>
+       <TransactionItem
+          key={el.id}
+          type={el.type}
+          amount={el.amount}
+          currency={el.currency}
+
+        />)}
+      </tbody>
     </table>
   );
 };
